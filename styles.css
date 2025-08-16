@@ -11,6 +11,8 @@
             --dark-gray: #495057;
             --dark-text: #212529;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --section-gap: clamp(32px, 6vw, 96px);
+            /* espacio vertical adaptable */
         }
 
         * {
@@ -80,14 +82,16 @@
 
         .hero {
             position: relative;
-            height: 100vh;
+            /* En vez de height: 100vh; usá una unidad “segura” y con tope */
+            height: min(100svh, 820px);
+            /* evita “saltos” en mobile */
             min-height: 700px;
-            background: linear-gradient(135deg, rgba(0, 91, 170, 0.85), rgba(0, 168, 89, 0.75)),
+            background:
+                linear-gradient(135deg, rgba(0, 91, 170, .85), rgba(0, 168, 89, .75)),
                 url("images/ACOMPAÑARTE\ ES\ SIEMPRE\ EL\ MEJOR\ PLAN.png") no-repeat;
-            background-size: 100% auto;
-            /* ampliar un poco */
-            background-position: 100% 36%;
-            /* mover la imagen */
+            background-size: cover;
+            /* mejor que 100% auto */
+            background-position: center 36%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,7 +99,11 @@
             color: var(--white);
             overflow: hidden;
             padding: 0 20px;
+
+            /* >>> Espacio debajo del hero */
+            margin-bottom: var(--section-gap);
         }
+
 
 
         .hero::before {
