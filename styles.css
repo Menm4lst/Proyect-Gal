@@ -113,7 +113,7 @@
             position: relative;
             z-index: 2;
             max-width: 900px;
-            background: rgba(0,0,0,0.45);
+            /* background eliminado para quitar el fondo negro */
             border-radius: 18px;
             padding: 32px 24px;
             display: inline-block;
@@ -144,10 +144,19 @@
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            /* Contorno negro fino */
+            text-shadow:
+                0 0 2px #000,
+                1px 1px 2px #000,
+                -1px -1px 2px #000;
         }
 
         .hero p {
+            /* Contorno negro fino */
+            text-shadow:
+                0 0 2px #000,
+                1px 1px 2px #000,
+                -1px -1px 2px #000;
             font-size: 1.25rem;
             margin-bottom: 40px;
             max-width: 700px;
