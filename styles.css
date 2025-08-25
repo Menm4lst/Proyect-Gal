@@ -1,3 +1,55 @@
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+    .hero-content {
+        max-width: 98vw;
+        padding: 16px 8px;
+    }
+    .logo-container {
+        top: 16px;
+        left: 8px;
+    }
+    .logo-container img {
+        max-width: 180px;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+        max-width: 95vw;
+    }
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 420px;
+        height: auto;
+        padding: 0 5px;
+    }
+    .logo-container img {
+        max-width: 120px;
+    }
+    .hero h1 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+    }
+    .cta-button {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+    .main-content {
+        margin: 20px auto;
+        padding: 0 5px;
+    }
+}
         :root {
             --galeno-blue: #005baa;
             --galeno-dark-blue: #00488a;
@@ -60,25 +112,33 @@
             animation: pulse 2s infinite;
         }
 
+
+
+
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: scale(1.1);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
 
-            70% {
-                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float {
+        animation: none !important;
+        transition: none !important;
+    }
+}
 
         .hero {
             position: relative;
@@ -142,27 +202,31 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            /* Contorno negro fino */
+            font-weight: 2000;
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            font-size: 3.1rem;
+            margin-bottom: 22px;
+            color: #fff;
             text-shadow:
-                0 0 2px #000,
-                1px 1px 2px #000,
-                -1px -1px 2px #000;
+                0 0 6px #000,
+                0 2px 8px rgba(0,0,0,0.45),
+                0 0 2px #000;
         }
 
         .hero p {
-            /* Contorno negro fino */
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            color: #fff;
             text-shadow:
-                0 0 2px #000,
-                1px 1px 2px #000,
-                -1px -1px 2px #000;
-            font-size: 1.25rem;
+                0 0 6px #000,
+                0 2px 8px rgba(0,0,0,0.45),
+                0 0 2px #000;
             margin-bottom: 40px;
-            max-width: 700px;
+            max-width: 620px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 300;
         }
 
         .cta-button {
@@ -924,6 +988,8 @@
 
         /* Footer */
         footer {
+            background: var(--medium-gray);
+            color: var(--dark-text);
             background-color: var(--galeno-dark-blue);
             color: var(--white);
             padding: 60px 20px 30px;
@@ -977,7 +1043,8 @@
         .footer-contact a {
             color: var(--white);
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
             transition: color 0.3s ease;
             font-size: 1.1rem;
